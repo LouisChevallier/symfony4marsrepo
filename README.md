@@ -1,6 +1,6 @@
 # Bienvenue sur mon projet !
 
-![Garamail](https://i.imgur.com/eidoyp4.png)
+![Symfony](https://www.adsysteme.com/wp-content/uploads/2019/05/symfony.png)
 
 ## Technos utilisés ?
 

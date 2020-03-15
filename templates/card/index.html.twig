@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Card index{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Card index</h1><a href="{{ path('card_new') }}" class="btn btn-lg btn-outline-primary">Create new</a>
+
+    <div class="card-deck mb-3 text-center wrapper">
+            {% for card in cards %}
+        <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">
+                {% if card.Type %}
+                {{ card.Type.TypeName }}
+                {% endif %}
+            </h4>
+        </div>
+        <div class="card-body">
+            <h1 class="card-title pricing-card-title">{{ card.Name }} <small class="text-muted">[ {{ card.Id }} ]</small></h1>
+            <div class="list-unstyled mt-3 mb-4">
+                <div class="cardImage"><img src="" ></div>
+                <div class="cardFooter">
+                    <div class="cardNumber" style="color:blue">{{ card.Healthpoint }} HP</div>
+                    <div class="cardNumber" style="color:red">{{ card.Attack }} ATK</div>
+                    <div class="cardNumber" style="color:green">{{ card.Cost }} MANA</div>
+                </div>
+            </div>
+            <div class="d-flex">
+            <a href="{{ path('card_show', {'id': card.id}) }}" class="btn btn-lg btn-outline-primary w-50">Voir la carte</a>
+            <a href="{{ path('card_edit', {'id': card.id}) }}" class="btn btn-lg btn-outline-primary w-50">Modifier la carte</a>
+            </div>
+        </div>
+        </div>
+            {% else %}
+                <tr>
+                    <td colspan="6">No records found</td>
+                </tr>
+            {% endfor %}
+    </div>
+
+<!--
+    <h1>Card index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Attack</th>
+                <th>Healthpoint</th>
+                <th>Defense</th>
+                <th>Type</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for card in cards %}
+            <tr>
+                <td>{{ card.id }}</td>
+                <td>{{ card.Name }}</td>
+                <td>{{ card.Attack }}</td>
+                <td>{{ card.Healthpoint }}</td>
+                <td>{{ card.Defense }}</td>
+                <td>
+                {% if card.Type %}
+                {{ card.Type.TypeName }}
+                {% endif %}</td>
+                <td>
+                    <a href="{{ path('card_show', {'id': card.id}) }}">show</a>
+                    <a href="{{ path('card_edit', {'id': card.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+-->
+</div>
+{% endblock %}
+

@@ -1,0 +1,177 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 -- phpMyAdmin SQL Dump\
+-- version 4.9.3\
+-- https://www.phpmyadmin.net/\
+--\
+-- Host: localhost:8889\
+-- Generation Time: Mar 15, 2020 at 10:41 PM\
+-- Server version: 5.7.26\
+-- PHP Version: 7.4.2\
+\
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";\
+SET time_zone = "+00:00";\
+\
+--\
+-- Database: `dbsymfonymars4`\
+--\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `card`\
+--\
+\
+CREATE TABLE `card` (\
+  `id` int(11) NOT NULL,\
+  `type_id` int(11) NOT NULL,\
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,\
+  `attack` int(11) NOT NULL,\
+  `healthpoint` int(11) NOT NULL,\
+  `defense` int(11) NOT NULL,\
+  `cost` int(11) NOT NULL\
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\
+\
+--\
+-- Dumping data for table `card`\
+--\
+\
+INSERT INTO `card` (`id`, `type_id`, `name`, `attack`, `healthpoint`, `defense`, `cost`) VALUES\
+(1, 1, 'Test', 160, 200, 0, 0),\
+(2, 1, 'Minch', 200, 300, 0, 0),\
+(3, 1, 'Mouss', 90, 200, 0, 0),\
+(4, 1, 'test', 12, 12, 12, 12),\
+(5, 1, 'test', 1, 1, 1, 1),\
+(6, 3, 'garchomp', 99, 99, 99, 5),\
+(7, 1, 'dsfsdf', 122, 34, 433, 34),\
+(8, 1, 'ffdfg', 12, 223, 233, 32),\
+(9, 1, 'ffdfg', 12, 223, 233, 32),\
+(10, 1, 'ffdfg', 12, 223, 233, 32),\
+(11, 1, 'ffdfg', 12, 223, 233, 32),\
+(12, 1, 'ffdfg', 12, 223, 233, 32),\
+(13, 1, 'ffdfg', 12, 223, 233, 32),\
+(14, 1, 'ffdfg', 12, 223, 233, 32),\
+(15, 1, 'ffdfg', 12, 223, 233, 32),\
+(16, 1, 'ffdfg', 12, 223, 233, 32),\
+(17, 1, 'ffdfg', 12, 223, 233, 32),\
+(18, 1, 'ffdfg', 12, 223, 233, 32),\
+(19, 1, 'ffdfg', 12, 223, 233, 32),\
+(20, 1, 'ffdfg', 12, 223, 233, 32),\
+(21, 1, 'ffdfg', 12, 223, 233, 32),\
+(22, 1, 'ffdfg', 12, 223, 233, 32),\
+(23, 1, 'ffdfg', 12, 223, 233, 32),\
+(24, 1, 'ffdfg', 12, 223, 233, 32),\
+(25, 1, 'ffdfg', 12, 223, 233, 32),\
+(26, 1, 'ffdfg', 12, 223, 233, 32),\
+(27, 1, 'ffdfg', 12, 223, 233, 32),\
+(28, 1, 'ffdfg', 12, 223, 233, 32),\
+(29, 1, 'ffdfg', 12, 223, 233, 32),\
+(30, 1, 'ffdfg', 12, 223, 233, 32),\
+(31, 1, 'ffdfg', 12, 223, 233, 32),\
+(32, 1, 'ffdfg', 12, 223, 233, 32),\
+(33, 1, 'ffdfg', 12, 223, 233, 32),\
+(34, 1, 'dfsdf', 34, 34, 34, 34),\
+(35, 1, 'zouzou', 232, 222, 22, 222),\
+(36, 1, 'zouzou', 232, 222, 22, 222),\
+(37, 1, 'zouzou', 232, 222, 22, 222),\
+(38, 1, 'zouzou', 232, 222, 22, 222),\
+(39, 1, 'zouzou', 232, 222, 22, 222),\
+(40, 3, 'ezerz', 11, 11, 11, 11),\
+(41, 2, 'faaaaa', 111, 111, 111, 1111),\
+(42, 1, 'FDFGD', 1111, 111, 111, 11);\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `type`\
+--\
+\
+CREATE TABLE `type` (\
+  `id` int(11) NOT NULL,\
+  `type_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL\
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\
+\
+--\
+-- Dumping data for table `type`\
+--\
+\
+INSERT INTO `type` (`id`, `type_name`) VALUES\
+(1, 'Electrik'),\
+(2, 'fire'),\
+(3, 'ground'),\
+(4, 'EDWA');\
+\
+-- --------------------------------------------------------\
+\
+--\
+-- Table structure for table `user`\
+--\
+\
+CREATE TABLE `user` (\
+  `id` int(11) NOT NULL,\
+  `username` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,\
+  `roles` json NOT NULL,\
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL\
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;\
+\
+--\
+-- Indexes for dumped tables\
+--\
+\
+--\
+-- Indexes for table `card`\
+--\
+ALTER TABLE `card`\
+  ADD PRIMARY KEY (`id`),\
+  ADD KEY `IDX_161498D3C54C8C93` (`type_id`);\
+\
+--\
+-- Indexes for table `type`\
+--\
+ALTER TABLE `type`\
+  ADD PRIMARY KEY (`id`);\
+\
+--\
+-- Indexes for table `user`\
+--\
+ALTER TABLE `user`\
+  ADD PRIMARY KEY (`id`),\
+  ADD UNIQUE KEY `UNIQ_8D93D649F85E0677` (`username`);\
+\
+--\
+-- AUTO_INCREMENT for dumped tables\
+--\
+\
+--\
+-- AUTO_INCREMENT for table `card`\
+--\
+ALTER TABLE `card`\
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;\
+\
+--\
+-- AUTO_INCREMENT for table `type`\
+--\
+ALTER TABLE `type`\
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;\
+\
+--\
+-- AUTO_INCREMENT for table `user`\
+--\
+ALTER TABLE `user`\
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;\
+\
+--\
+-- Constraints for dumped tables\
+--\
+\
+--\
+-- Constraints for table `card`\
+--\
+ALTER TABLE `card`\
+  ADD CONSTRAINT `FK_161498D3C54C8C93` FOREIGN KEY (`type_id`) REFERENCES `type` (`id`);\
+}
